@@ -32,7 +32,7 @@ void i2c_task(void *p) {
     // Configure o acc para operar em 4G
 
     uint8_t buf_write[2];
-    buf_write[0] = MPUREG_PWR_MGMT_1; // registrador
+    buf_write[0] = MPUREG_ACCEL_CONFIG; // registrador
     buf_write[1] = 1 << 3;            // valor
     i2c_write_blocking(i2c_default, I2C_CHIP_ADDRESS, buf_write, 2, false);
 
